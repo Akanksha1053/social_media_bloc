@@ -19,7 +19,7 @@ const postBottomButtonDecoration = BoxDecoration(
 
 const postButtonIconColor = Color(0xFFFFFFCC);
 
-const Color bottomNavBarColor = Color.fromRGBO(87, 144, 223, 0.6);
+const Color bottomNavBarColor = Color.fromRGBO(136, 125, 186, 0.9);
 const Color bottomNavBarButtonBackgroundColor =
     Color.fromRGBO(240, 211, 210, 0.6);
 const Color bottomNavBarBackColor = Color.fromRGBO(255, 255, 255, 0);
