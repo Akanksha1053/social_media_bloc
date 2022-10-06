@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      StoriesWidget(),
+      const StoriesWidget(),
       PostsWidget(),
     ]);
   }

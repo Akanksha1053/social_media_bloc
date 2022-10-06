@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_assignment6/constants/color_constants.dart';
-import 'package:news_app_assignment6/widgets/app_bar_icons.dart';
 
 import '../bloc/social_media_bloc.dart';
+import '../constants/color_constants.dart';
+import '../widgets/app_bar_icons.dart';
 import '../widgets/posts.dart';
 
 class BookMarkScreen extends StatelessWidget {

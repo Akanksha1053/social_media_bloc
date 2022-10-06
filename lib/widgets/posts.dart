@@ -8,7 +8,6 @@ import '../constants/style_constants.dart';
 import 'post_icons.dart';
 
 class Posts extends StatelessWidget {
-  // Posts({Key? key, required this.post})
   const Posts({Key? key, required this.postData, required this.index})
       : super(key: key);
   final PostData postData;

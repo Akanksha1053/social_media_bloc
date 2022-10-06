@@ -45,16 +45,16 @@ class SocialMediaBloc extends Bloc<SocialMediaEvent, SocialMediaState> {
     }
   }
 
-  SocialMediaBloc() : super(InitialState()) {
+  SocialMediaBloc() : super(InitialState(0)) {
     on<FetchData>((event, emit) async {
       try {
         final fetchedPost = await _fetchPosts();
         final fetchedStories = await _fetchStories();
         emit((LoadedState(
-          posts: fetchedPost,
-          stories: fetchedStories,
-          bookmark: [],
-        )));
+            posts: fetchedPost,
+            stories: fetchedStories,
+            bookmark: [],
+            selectedIndex: 2)));
       } catch (error) {
         rethrow;
       }
@@ -64,7 +64,6 @@ class SocialMediaBloc extends Bloc<SocialMediaEvent, SocialMediaState> {
     }
 
     Future<void> _deleteBookMark(PostData post) async {
-      print('delete');
       (state as LoadedState)
           .bookmark
           .removeWhere((element) => element.id == post.id);
@@ -73,8 +72,7 @@ class SocialMediaBloc extends Bloc<SocialMediaEvent, SocialMediaState> {
     on<FetchBookMark>(
       (event, emit) {
         emit((state as LoadedState).copyWith(
-          bookmark: (state as LoadedState).bookmark,
-        ));
+            bookmark: (state as LoadedState).bookmark, selectedIndex: 4));
       },
     );
 

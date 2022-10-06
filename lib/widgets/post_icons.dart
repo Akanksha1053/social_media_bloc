@@ -21,22 +21,17 @@ class PostIcons extends StatefulWidget {
 class _PostIconsState extends State<PostIcons> {
   @override
   Widget build(BuildContext context) {
-    // bool isBookmarked;
     PostData post;
     return BlocBuilder<SocialMediaBloc, SocialMediaState>(
       builder: (context, state) {
-        // isBookmarked =
-        //     (state as LoadedState).bookmark.contains(widget.postData);
-        post = (state as LoadedState)
-            .posts
-            .firstWhere((element) => element.id == widget.postData.id);
+        bool isBookmarked =
+            (state as LoadedState).bookmark.contains(widget.postData);
         return Container(
             margin: const EdgeInsets.only(right: 10, left: 10),
             child: Icon(widget.icon,
-                color:
-                    (post.isBookmarked && widget.icon == Icons.bookmark_added)
-                        ? activeBookmarkColor
-                        : postButtonColor));
+                color: (isBookmarked && widget.icon == Icons.bookmark_added)
+                    ? activeBookmarkColor
+                    : postButtonColor));
       },
     );
   }
