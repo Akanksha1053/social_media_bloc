@@ -21,7 +21,7 @@ final sL = GetIt.instance;
 void init() {
   //bloc
   sL.registerFactory(
-    () => SocialMediaBloc(sL(), sL(), sL()),
+    () => SocialMediaBloc(sL(), sL(), sL(), sL()),
   );
   sL.registerFactory(
     () => BookmarkScreenBloc(sL(), sL()),
