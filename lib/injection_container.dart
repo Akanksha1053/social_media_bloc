@@ -21,7 +21,11 @@ final sL = GetIt.instance;
 void init() {
   //bloc
   sL.registerFactory(
-    () => SocialMediaBloc(sL(), sL(), sL(), sL()),
+    () => SocialMediaBloc(
+        bookmarkUseCase: sL(),
+        fetchAllBookmarksUseCase: sL(),
+        fetchDataUseCase: sL(),
+        removeFrombookmarkUseCase: sL()),
   );
   sL.registerFactory(
     () => BookmarkScreenBloc(sL(), sL()),
